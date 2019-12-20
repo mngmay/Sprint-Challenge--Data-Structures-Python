@@ -53,7 +53,7 @@ class LinkedList:
 
         while current_node is not None:
             stored = current_node.next_node
-            current_node.next_node = prev  # reverse
+            current_node.next_node = prev
             prev = current_node
             current_node = stored
             self.head = prev
