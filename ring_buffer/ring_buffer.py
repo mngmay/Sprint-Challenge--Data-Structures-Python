@@ -44,18 +44,14 @@ class RingBuffer:
 class ArrayRingBuffer:
     def __init__(self, capacity):
         self.capacity = capacity
-        self.current = None
+        self.current = 0
         self.storage = [None] * capacity
 
     def append(self, item):
-        if self.current is None:
-            self.current = 0
-
         self.storage[self.current] = item
 
         if self.current == self.capacity - 1:
             self.current = 0
-
         else:
             self.current += 1
 
